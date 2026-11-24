@@ -4,6 +4,15 @@ Newest first. One entry per working session.
 
 ---
 
+## 2026-11-25 — Pushed to GitHub
+
+- Remote: `https://github.com/MUIZ-UDDIN/ECD-World.git` (`origin`, branch `main`).
+- Credential helper: Git Credential Manager (`manager`) configured locally; GCM 2.7.3.
+- Initial commit `f950201` — 116 tracked files, ~0.9 MB (node_modules and `.next` ignored).
+- Repo was empty; pushed with `git push -u origin main`.
+
+---
+
 ## 2026-11-25 — Initial build: Next.js storefront replacing ecdworld.com
 
 **Goal.** Client wants a code-based replacement for their WordPress/WooCommerce store,
