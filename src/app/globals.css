@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette: warm paper, deep forest, fired clay ---- */
+  --color-cream: #fbf8f3;
+  --color-shell: #f4ede2;
+  --color-sand: #e7dccb;
+  --color-taupe: #cdbfa9;
+
+  --color-forest: #1b3a2c;
+  --color-pine: #2e5643;
+  --color-moss: #5c7a63;
+  --color-sage: #a8b8a4;
+
+  --color-clay: #a9532f;
+  --color-ember: #d97742;
+  --color-blush: #e9d3c4;
+
+  --color-ink: #191713;
+  --color-muted: #6f675c;
+  --color-line: #e2d8c8;
+
+  /* ---- Typography ---- */
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-xl: clamp(2.75rem, 7vw, 5.5rem);
+  --text-display-xl--line-height: 0.95;
+  --text-display-xl--letter-spacing: -0.03em;
+
+  --text-display: clamp(2.25rem, 4.5vw, 3.75rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.025em;
+
+  --text-title: clamp(1.75rem, 2.6vw, 2.5rem);
+  --text-title--line-height: 1.1;
+  --text-title--letter-spacing: -0.02em;
+
+  /* ---- Soft, warm shadows ---- */
+  --shadow-lift: 0 1px 2px rgb(27 58 44 / 0.04), 0 12px 32px -12px rgb(27 58 44 / 0.18);
+  --shadow-deep: 0 2px 4px rgb(27 58 44 / 0.05), 0 32px 60px -24px rgb(27 58 44 / 0.3);
+
+  --radius-4xl: 2rem;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-fade-up: fade-up 0.7s var(--ease-out-soft) both;
+  --animate-fade-in: fade-in 0.8s var(--ease-out-soft) both;
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-forest);
+    color: var(--color-cream);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .wrap {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+  }
+
+  .rule {
+    height: 1px;
+    background: linear-gradient(to right, var(--color-line), transparent);
+  }
+}
+
+/* Slim scrollbar for horizontal product rails */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
