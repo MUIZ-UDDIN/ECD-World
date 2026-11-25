@@ -130,6 +130,12 @@
     }
   }
 
+  @media (max-width: 359px) {
+    .wrap {
+      padding-inline: 1rem;
+    }
+  }
+
   .eyebrow {
     font-size: 0.6875rem;
     font-weight: 600;

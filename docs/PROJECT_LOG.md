@@ -4,6 +4,25 @@ Newest first. One entry per working session.
 
 ---
 
+## 2026-11-25 — Mobile fixes: long product names, footer alignment, 320 px
+
+- **Root cause of the cart overflow:** long product names ("Brown Stair (Brown Lacquer)",
+  "Geometric Solids With Stand", "11 Colored Pencils…") kept their full min-content width,
+  so the grid column forced the page 46 px wider than the viewport and pushed the delete
+  button off-screen. Fixed by adding `min-w-0` to the grid/flex ancestors and switching
+  cart/checkout names from `truncate` (nowrap) to `line-clamp-2` (wraps to two lines).
+- **Header at 320 px** overflowed by 14 px. Wordmark, menu/search/wishlist/cart padding now
+  scale down below `sm`, and `.wrap` drops to 1 rem side padding under 360 px.
+- **Footer on mobile** is now centred (`text-center` → `md:text-left`), social pills centred,
+  bottom trust bar wraps cleanly without mid-word breaks.
+- **Removed test artifacts** that had been committed (`.audit-overflow.js`,
+  `.repro-mobile.js`, `repro-cart.png`, `.playwright-mcp/`); added ignore rules for them.
+- **Verified:** automated overflow audit across `/`, `/shop`, `/shop/sensorial`, long-name
+  product pages, `/cart`, `/checkout`, `/wishlist`, `/about`, `/contact`, 404 at
+  **320 / 360 / 375 / 390 px** — 0 px horizontal overflow on every combination.
+
+---
+
 ## 2026-11-25 — Pushed to GitHub
 
 - Remote: `https://github.com/MUIZ-UDDIN/ECD-World.git` (`origin`, branch `main`).

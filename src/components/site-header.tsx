@@ -66,12 +66,12 @@ export function SiteHeader() {
             : "border-b border-transparent bg-cream",
         )}
       >
-        <div className="wrap flex h-16 items-center justify-between gap-4 md:h-20">
-          <div className="flex items-center gap-2">
+        <div className="wrap flex h-16 items-center justify-between gap-2 md:h-20 md:gap-4">
+          <div className="flex items-center gap-1 sm:gap-2">
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              className="-ml-2 rounded-full p-2 text-forest transition-colors hover:bg-shell lg:hidden"
+              className="-ml-2 rounded-full p-1.5 text-forest transition-colors hover:bg-shell sm:p-2 lg:hidden"
               aria-label="Open menu"
               aria-expanded={menuOpen}
             >
@@ -109,7 +109,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="rounded-full p-2.5 text-forest transition-colors hover:bg-shell"
+              className="rounded-full p-2 text-forest transition-colors hover:bg-shell sm:p-2.5"
               aria-label="Search"
             >
               <Search className="size-[1.15rem]" aria-hidden />
@@ -117,7 +117,7 @@ export function SiteHeader() {
 
             <Link
               href="/wishlist"
-              className="relative rounded-full p-2.5 text-forest transition-colors hover:bg-shell"
+              className="relative rounded-full p-2 text-forest transition-colors hover:bg-shell sm:p-2.5"
               aria-label={`Wishlist${hydrated && wishlistCount ? `, ${wishlistCount} items` : ""}`}
             >
               <Heart className="size-[1.15rem]" aria-hidden />
@@ -130,7 +130,7 @@ export function SiteHeader() {
 
             <Link
               href="/cart"
-              className="relative ml-0.5 flex items-center gap-2 rounded-full bg-forest px-3.5 py-2.5 text-cream transition-colors hover:bg-pine sm:px-4"
+              className="relative ml-0.5 flex items-center gap-2 rounded-full bg-forest px-3 py-2 text-cream transition-colors hover:bg-pine sm:px-3.5 sm:py-2.5"
               aria-label={`Cart${hydrated && cartCount ? `, ${cartCount} items` : ""}`}
             >
               <ShoppingBag className="size-[1.05rem]" aria-hidden />

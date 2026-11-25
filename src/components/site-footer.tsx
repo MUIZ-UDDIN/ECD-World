@@ -100,12 +100,12 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="flex items-center justify-center gap-4 sm:justify-start">
-            <span>Cash on delivery</span>
-            <span className="h-3 w-px bg-line" aria-hidden />
-            <span>Bank transfer</span>
-            <span className="h-3 w-px bg-line" aria-hidden />
-            <span>Nationwide shipping</span>
+          <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.68rem] sm:justify-start sm:text-[0.72rem]">
+            <span className="whitespace-nowrap">Cash on delivery</span>
+            <span className="hidden h-3 w-px bg-line sm:block" aria-hidden />
+            <span className="whitespace-nowrap">Bank transfer</span>
+            <span className="hidden h-3 w-px bg-line sm:block" aria-hidden />
+            <span className="whitespace-nowrap">Nationwide shipping</span>
           </p>
         </div>
       </div>
