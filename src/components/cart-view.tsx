@@ -64,7 +64,7 @@ export function CartView() {
   return (
     <>
       <div className="wrap grid gap-10 pt-10 pb-20 lg:grid-cols-12 lg:gap-14 lg:pb-28">
-      <div className="lg:col-span-7 xl:col-span-8">
+      <div className="min-w-0 lg:col-span-7 xl:col-span-8">
         <div className="flex items-baseline justify-between">
           <p className="text-[0.72rem] tracking-[0.14em] text-muted uppercase">
             {summary.itemCount} {summary.itemCount === 1 ? "item" : "items"} in cart
@@ -78,7 +78,7 @@ export function CartView() {
           {summary.lines.map((line) => {
             const category = categoryCopy[line.product.primaryCategory];
             return (
-              <li key={line.slug} className="flex gap-4 py-5 sm:gap-5">
+              <li key={line.slug} className="flex min-w-0 gap-4 py-5 sm:gap-5">
                 <Link
                   href={`/product/${line.slug}`}
                   className="relative size-24 shrink-0 overflow-hidden rounded-2xl border border-line bg-white sm:size-28"
@@ -102,7 +102,7 @@ export function CartView() {
                       </p>
                       <Link
                         href={`/product/${line.slug}`}
-                        className="mt-1 block truncate font-display text-lg leading-snug text-ink hover:text-forest"
+                        className="mt-1 line-clamp-2 font-display text-lg leading-snug text-ink hover:text-forest"
                       >
                         {line.product.name}
                       </Link>
@@ -149,7 +149,7 @@ export function CartView() {
         </p>
       </div>
 
-      <aside className="lg:col-span-5 xl:col-span-4">
+      <aside className="min-w-0 lg:col-span-5 xl:col-span-4">
         <div className="rounded-3xl border border-line bg-shell/50 p-6 lg:sticky lg:top-28">
           <h2 className="font-display text-xl text-forest">Order summary</h2>
 

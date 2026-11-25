@@ -5,7 +5,7 @@ import { categoryCopy, site } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-line bg-shell/60 md:mt-20">
-      <div className="wrap py-14 md:py-20">
+      <div className="wrap py-14 text-center md:py-20 md:text-left">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="font-display text-3xl leading-[1.1] tracking-[-0.02em] text-forest">
@@ -80,7 +80,7 @@ export function SiteFooter() {
               </p>
               <p>{site.whatsappDisplay}</p>
             </div>
-            <div className="mt-5 flex gap-2">
+            <div className="mt-5 flex justify-center gap-2 md:justify-start">
               {site.socials.map((social) => (
                 <a
                   key={social.label}
@@ -96,11 +96,11 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-line pt-6 text-[0.72rem] text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-line pt-6 text-[0.72rem] text-muted sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="flex items-center gap-4">
+          <p className="flex items-center justify-center gap-4 sm:justify-start">
             <span>Cash on delivery</span>
             <span className="h-3 w-px bg-line" aria-hidden />
             <span>Bank transfer</span>

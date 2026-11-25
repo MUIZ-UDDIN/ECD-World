@@ -146,7 +146,7 @@ export function CheckoutView() {
 
   return (
     <form onSubmit={handleSubmit} className="wrap grid gap-10 pt-8 pb-20 lg:grid-cols-12 lg:gap-14 lg:pb-28">
-      <div className="lg:col-span-7">
+      <div className="min-w-0 lg:col-span-7">
         <section>
           <div className="flex items-center gap-3">
             <span className="flex size-7 items-center justify-center rounded-full bg-forest text-[0.7rem] font-semibold text-cream">
@@ -275,7 +275,7 @@ export function CheckoutView() {
         </p>
       </div>
 
-      <aside className="lg:col-span-5">
+      <aside className="min-w-0 lg:col-span-5">
         <div className="rounded-3xl border border-line bg-shell/50 p-6 lg:sticky lg:top-28">
           <h2 className="font-display text-xl text-forest">Your order</h2>
 
@@ -294,7 +294,7 @@ export function CheckoutView() {
                   ) : null}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-[0.82rem] font-medium text-ink">
+                  <p className="line-clamp-2 text-[0.82rem] font-medium text-ink">
                     {line.product.name}
                   </p>
                   <p className="text-[0.7rem] text-muted">
